@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- My CSS for page -->
+<link rel="stylesheet" th:href="@{/css/home.css}" href="../../css/home.css" />
+
+<!-- CSS for chart tooltip -->
+<link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/stocktools/gui.css" />
+<link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/annotations/popup.css" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="ISO-8859-1">
+<title>Financial Investment Assistant</title>
+
+<!-- Script below is to pre-load the high charts api with ajaxgoogleapi -->
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/stock/indicators/indicators-all.js"></script>
+
+<!-- UI JavaScript for the chart -->
+<script src="https://code.highcharts.com/modules/drag-panes.js"></script>
+<!-- <script src="https://code.highcharts.com/modules/annotations-advanced.js"></script> -->
+<script src="https://code.highcharts.com/modules/price-indicator.js"></script>
+<script src="https://code.highcharts.com/modules/full-screen.js"></script>
+
+<!-- Additional Modules to load -->
+<script src="https://code.highcharts.com/modules/debugger.js"></script>
+
+<!-- Load this last:  -->
+<script src="https://code.highcharts.com/modules/stock-tools.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1>Financial Investment Assistant</h1>
+		</header>
+		<nav class="menu">
+			<a th:href="@{/}">Homepage</a>
+			<a href="#">PlaceHolder</a>
+			<a href="#">PlaceHolder</a>
+			<a href="#">PlaceHolder</a>
+		</nav>
+	</div>
+	<div id="content">
+		<div id="dashboard">
+			<section id="chartID" class="section">
+				<p>Loading Highchart JavaScript</p>
+			</section>
+			<br/>
+			<div class="controls">
+				<form th:action="@{/requestJson}" method="post">
+					<select id="symbols" th:field="${stockNames}">
+						<option value="default">Select stock</option>
+						<option th:each="stock : ${stockNames}" th:value="${stock[0]}" th:text="${stock[1]}"></option>
+					</select>
+					<input id="yearSelector" type="number" min="1" max="5" value="1">
+					<button id="apply" type="submit">Apply Options</button>
+				</form>
+			</div>
+			<section id="dataTable" class="section">
+				<p>Disclaimer: Data provided for free by IEX. View IEX’s Terms of Use.<p>
+			</section>
+		</div>
+	</div>
+	<footer id="footer" class="footer">
+		<p>Created by Michael Tang</p>
+		<p>Univeristy Of Leicester, Informatics Department, Final Year Project</p>
+	</footer>
+</body>
+<!-- After the chart has loaded, load in the data into it -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../../js/highchart.js"></script>
+</html>
