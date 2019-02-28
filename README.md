@@ -12,3 +12,5 @@ To run my code on
 
 # On IDE's like Spring Tool Suite
 Import the project as an existing gradle project and on the bottom right on the boot dash click on local and then on the dropdown list click on project name. Then run by clicking the red square with a play symbol.
+
+![Image not found](https://github.com/MichaelWYT/Financial-Investment-Assistant/blob/master/images/Bootdash.png)
