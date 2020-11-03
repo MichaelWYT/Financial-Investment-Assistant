@@ -1,3 +1,9 @@
+# PSA
+The API for IEX has changed onto a cloud platform which is also free. Note that you will need to sign up with them to get an api key. Turn on sandbox mode for testing the api and using the actual endpoint to call data.
+
+The data are premium so make sure you turn it off and call endpoints which are free. For more information google IEX Cloud.
+
+
 # Financial-Investment-Assistant
 My final year project utilising investment strategies to assist new or experienced investors whether they should invest in a chosen stock and gain the most return in investment.
 ***
